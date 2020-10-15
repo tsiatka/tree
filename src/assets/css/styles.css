@@ -24,24 +24,14 @@ img { max-width: 100%; height: auto; vertical-align: middle; }
 /*******************************/
 /* Tree view                   */
 /*******************************/
-body { background: #fbfbfb; }
+body { background: #fbfbfb; text-align: center; }
+
+svg { top: 0; bottom: 0; left: 0; right: 0; position: absolute; }
 
 ul { display: flex; position: relative; }
 
 ul > li { flex: 1 auto; position: relative; }
 
-ul > li::before { position: absolute; content: ""; top: -10px; height: 10px; width: 1px; left: 50%; background: #aaaaaa; }
+ul > li > *:not(ul) { box-shadow: 0 0 2px black; background-color: white; padding: 20px 30px; }
 
-ul > li::after { position: absolute; content: ""; top: -10px; width: 100%; left: 0; border-top: 1px solid #aaa; }
-
-ul > li:first-child::after { left: 50%; width: 50%; }
-
-ul > li:last-child::after { left: 0%; width: 50%; }
-
-ul > li:only-child::after { left: 0%; width: 0%; }
-
-ul > li > *:not(ul) { padding: 20px 30px; background: #ffffff; box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); }
-
-ul > li > ul { margin-top: 20px; flex: 1 1 100%; }
-
-ul > li > ul::after { content: ""; position: absolute; top: -20px; height: 10px; width: 1px; left: 50%; background: #aaaaaa; }
+ul ul { margin-top: 30px; }
