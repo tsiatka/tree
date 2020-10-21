@@ -1,10 +1,10 @@
-function createLines() {
-  var arbo = document.querySelector(".arbo")
-  var wrapper =  document.createElement('div')
-  wrapper.setAttribute("class","wrapper")
-  arbo.parentNode.insertBefore(wrapper, arbo)
-  wrapper.appendChild(arbo)
+var arbo = document.querySelector(".arbo")
+var wrapper =  document.createElement('div')
+wrapper.setAttribute("class","wrapper")
+arbo.parentNode.insertBefore(wrapper, arbo)
+wrapper.appendChild(arbo)
 
+function createLines() {
   let viewBox = `0 0 ${arbo.offsetWidth + window.scrollX} ${arbo.getBoundingClientRect().height}`
   var svg = document.createElementNS("http://www.w3.org/2000/svg","svg")     
   svg.setAttribute("viewBox", viewBox);
