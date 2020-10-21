@@ -28,10 +28,18 @@ body { background: #fbfbfb; text-align: center; }
 
 svg { top: 0; bottom: 0; left: 0; right: 0; position: absolute; }
 
-ul { display: flex; position: relative; }
+svg path { stroke: black; fill: transparent; stroke-dasharray: 1000; animation: strokeEntry 2s ease-in-out; }
+
+svg path:nth-child(5) { animation-delay: 2s; }
+
+@keyframes strokeEntry { to { stroke-dashoffset: 0; } }
+
+@media (min-width: 1100px) { ul { display: flex; position: relative; } }
 
 ul > li { flex: 1 auto; position: relative; }
 
-ul > li > *:not(ul) { box-shadow: 0 0 2px black; background-color: white; padding: 20px 30px; }
+@media (max-width: 1100px) { ul > li { margin-left: 40px; } }
 
-ul ul { margin-top: 30px; }
+ul > li > *:not(ul) { background-color: white; border: 1px solid #222; padding: 20px 30px; }
+
+ul > li > ul { margin-top: 30px; }
