@@ -28,12 +28,20 @@ body { background: #fbfbfb; text-align: center; }
 
 svg { top: 0; bottom: 0; left: 0; right: 0; position: absolute; }
 
+<<<<<<< HEAD
 svg path { stroke: black; fill: transparent; stroke-dasharray: 1000; animation: strokeEntry 2s ease-in-out; }
 
 @keyframes strokeEntry { from { stroke-dashoffset: 1000; }
   to { stroke-dashoffset: 0; } }
 
 @media (min-width: 1100px) { ul { display: flex; position: relative; } }
+=======
+path { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 5s linear forwards; }
+
+@keyframes draw { to { stroke-dashoffset: 0; } }
+
+ul { display: flex; position: relative; }
+>>>>>>> 7a01678dd830394cc811d7b03496b2a83dbf1626
 
 ul > li { flex: 1 auto; position: relative; }
 
