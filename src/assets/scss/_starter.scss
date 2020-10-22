@@ -4,7 +4,9 @@
 
 body {
   background: #fbfbfb;
-  text-align: center;
+   @media (min-width: 1100px) {
+    text-align: center;
+  }
 }
 
 svg {
