@@ -30,9 +30,8 @@ svg { top: 0; bottom: 0; left: 0; right: 0; position: absolute; }
 
 svg path { stroke: black; fill: transparent; stroke-dasharray: 1000; animation: strokeEntry 2s ease-in-out; }
 
-svg path:nth-child(5) { animation-delay: 2s; }
-
-@keyframes strokeEntry { to { stroke-dashoffset: 0; } }
+@keyframes strokeEntry { from { stroke-dashoffset: 1000; }
+  to { stroke-dashoffset: 0; } }
 
 @media (min-width: 1100px) { ul { display: flex; position: relative; } }
 
