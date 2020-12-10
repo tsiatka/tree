@@ -13,6 +13,10 @@ const distFolder = './dist/';
 const srcFolder = './src/';
 
 const paths = {
+  js: {
+    src: './src/assets/js/**/*.js',
+    dest: './dist/assets/js/',
+  },
   css: {
     src: './src/assets/css/**/*.css',
     dest: './dist/assets/css/',
@@ -79,6 +83,15 @@ function scss() {
   );
 }
 
+function js() {
+  return (
+    gulp
+      .src(paths.js.src)
+      .pipe(gulp.dest(paths.js.dest))
+      .pipe(browsersync.stream())
+  );
+}
+
 
 function css() {
   return (
@@ -110,6 +123,7 @@ function watchFiles() {
   gulp.watch(paths.css.src, css);
   gulp.watch(paths.html.src, html);
   gulp.watch(paths.img.src, images);
+  gulp.watch(paths.js.src, js);
 }
 
 function watch() {
@@ -129,7 +143,7 @@ function font() {
   );
 }
 
-const serie = gulp.series(clear, html, scss, css, images, font);
+const serie = gulp.series(clear, html, scss, css, images, font, js);
 const build = gulp.series(serie, gulp.parallel(watchFiles, browserSync));
 
 const dev = gulp.series(gulp.series(scss, css, html), gulp.parallel(watch, browserSyncDev));
